@@ -1,0 +1,41 @@
+name: Sync upstream Stop Slop
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-stop-slop
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out marketplace
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Sync bundled skill
+        run: bash ./scripts/sync-upstream.sh
+
+      - name: Commit upstream changes
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain -- plugins/stop-slop)" ]]; then
+            echo "The bundled skill is already current."
+            exit 0
+          fi
+
+          upstream_sha="$(<plugins/stop-slop/UPSTREAM_COMMIT)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add plugins/stop-slop
+          git commit -m "chore: sync stop-slop ${upstream_sha:0:12}"
+          git push origin "HEAD:${{ github.event.repository.default_branch }}"

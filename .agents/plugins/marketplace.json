@@ -1,0 +1,20 @@
+{
+  "name": "stop-slop-marketplace",
+  "interface": {
+    "displayName": "Stop Slop Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "stop-slop",
+      "source": {
+        "source": "local",
+        "path": "./plugins/stop-slop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
