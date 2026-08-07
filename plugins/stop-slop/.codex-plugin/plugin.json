@@ -1,0 +1,36 @@
+{
+  "name": "stop-slop",
+  "version": "1.0.0",
+  "description": "Remove predictable AI writing patterns from prose.",
+  "author": {
+    "name": "Hardik Pandya",
+    "url": "https://hvpandya.com"
+  },
+  "homepage": "https://github.com/hardikpandya/stop-slop",
+  "repository": "https://github.com/FrantsevN/stop-slop-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "prose",
+    "style",
+    "ai-writing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Stop Slop",
+    "shortDescription": "Remove predictable AI writing patterns from prose",
+    "longDescription": "Draft, edit, and review prose using Hardik Pandya's Stop Slop rules for direct language, varied rhythm, and specific human subjects.",
+    "developerName": "Hardik Pandya",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/hardikpandya/stop-slop",
+    "defaultPrompt": [
+      "Use Stop Slop to revise this draft and remove predictable AI writing patterns.",
+      "Review this text with Stop Slop and explain the patterns you changed."
+    ]
+  }
+}
