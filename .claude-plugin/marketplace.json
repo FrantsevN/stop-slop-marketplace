@@ -1,0 +1,38 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "stop-slop-marketplace",
+  "description": "Claude Plugin Marketplace for the upstream Stop Slop writing skill.",
+  "owner": {
+    "name": "FrantsevN",
+    "url": "https://github.com/FrantsevN"
+  },
+  "plugins": [
+    {
+      "name": "stop-slop",
+      "displayName": "Stop Slop",
+      "description": "Remove predictable AI writing patterns from prose.",
+      "author": {
+        "name": "Hardik Pandya",
+        "url": "https://hvpandya.com"
+      },
+      "source": {
+        "source": "github",
+        "repo": "hardikpandya/stop-slop"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ],
+      "homepage": "https://github.com/hardikpandya/stop-slop",
+      "repository": "https://github.com/hardikpandya/stop-slop",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "writing",
+        "editing",
+        "prose",
+        "style"
+      ]
+    }
+  ]
+}
